@@ -13,12 +13,17 @@
 #include "TpTemperature.h"
 #include "TpFan.h"
 #include "TpTempRegulator.h"
+#if defined(HAVE_CONFIG_H)
+# include "config.h"
+#endif
 
 /*************************************************************************************************/
 /* Constants                                                                                     */
 /*************************************************************************************************/
-#define APPLICATION_NAME      "tpfand"
-#define APPLICATION_VERSION   "0.9.0"
+#if !defined(HAVE_CONFIG_H)
+# define APPLICATION_NAME      "tpfand"
+# define APPLICATION_VERSION   "0.9.0"
+#endif
 
 /** Config file parameters **/
 static const std::string CFG_FILE_PATH = "/etc/tpfand.conf";

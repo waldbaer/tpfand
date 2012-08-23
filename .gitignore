@@ -10,3 +10,13 @@
 *.lai
 *.la
 *.a
+
+# Eclipse project
+.project
+.cproject
+.settings
+
+# CMake
+build/*
+!build/b_release.sh
+!build/b_debug.sh
