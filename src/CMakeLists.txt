@@ -33,10 +33,4 @@ install(
   RUNTIME DESTINATION bin
 )
 
-if(CMAKE_HOST_UNIX)
-    message("is host unix destdir=$ENV{DESTDIR} installdir=${BIN_INSTALL_DIR}")
-    install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink
-    tpfand \"\$ENV{DESTDIR}${BIN_INSTALL_DIR}/tpfand\" )" )
-endif(CMAKE_HOST_UNIX)
-
 # vim: set ts=4 sw=4 et:
