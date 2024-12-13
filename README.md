@@ -9,6 +9,7 @@ Build the binary:
 ```
 cd build
 ./b_release.sh
+make -j
 ```
 
 Location of compiled binary: `build/src/tpfand`
@@ -27,6 +28,27 @@ Temp: 68.00  dT: -1.00  regP: 0.38  regD: -0.25  corr: 0.12  fanLevel: 3
 Temp: 64.00  dT: -4.00  regP: -0.12  regD: -1.00  corr: -1.12  fanLevel: 2
 ...
 ```
+
+## Tweak Configuration
+
+`tpfand` will create a default configuration file at `/etc/tpfand.conf` during first run.
+It might be necessary to adapt the sensors or fan device paths.
+In addition also the regulator parameters can be adapted.
+
+The default settings have been verified to work with:
+- **Ubuntu 24.10**
+- **Lenovo T420s**
+
+
+## Enable ACPI
+It might be necessary that man fan control must be enabled with kernel parameters.
+
+If the reported fan level updates of `./tpfand --verbose` can be observed please add the following kernel options file `/etc/modprobe.d/thinkpad_acpi.conf`:
+```
+options thinkpad_acpi fan_control=1
+```
+
+Reboot the system.
 
 ## Use as systemd service
 ```

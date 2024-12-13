@@ -43,7 +43,7 @@ static const string CFG_REG_PRESCALE = "regulation_prescaler";
 
 /** Config file parameters - Default values **/
 static const string CFG_TEMPSENSORS_DEFAULT =
-    "/sys/devices/platform/coretemp.0/temp2_input;/sys/devices/platform/coretemp.0/temp3_input";
+    "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp2_input;/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp3_input";
 static const string CFG_FANDEVICE_DEFAULT = "/proc/acpi/ibm/fan";
 
 static const double CFG_NOM_TEMP_DEFAULT = 65.0F;
